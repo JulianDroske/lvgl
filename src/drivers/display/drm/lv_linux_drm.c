@@ -480,6 +480,7 @@ static int drm_find_connector(drm_dev_t * drm_dev, int64_t connector_id)
 
         if(connector_id >= 0 && conn->connector_id != connector_id) {
             drmModeFreeConnector(conn);
+            conn = NULL;
             continue;
         }
 
